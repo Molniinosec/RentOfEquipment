@@ -29,6 +29,7 @@ namespace RentOfEquipment.Windows
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            //6767
             if (string.IsNullOrWhiteSpace(txtLName.Text))
             {
                 MessageBox.Show("Поле Фамилия не должно быть пустым", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
