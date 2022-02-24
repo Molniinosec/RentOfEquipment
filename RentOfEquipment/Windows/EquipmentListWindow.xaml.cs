@@ -27,6 +27,7 @@ namespace RentOfEquipment.Windows
             cmbSor.ItemsSource = ListSort;
             cmbSor.SelectedIndex = 0;
         }
+     
 
         public void Filter()
         {
@@ -69,6 +70,51 @@ namespace RentOfEquipment.Windows
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             Filter();
+        }
+
+        private void cmbSor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
+        }
+
+        private void lvEquipment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete || e.Key == Key.Back)
+            {
+                var resClick = MessageBox.Show("Вы уверенны, что хотите удалить данную запись?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                if (resClick == MessageBoxResult.No)
+                {
+                    return;
+                }
+                try
+                {
+                    if (lvEquipment.SelectedItem is EF.Product)
+                    {
+                        var empl = lvEquipment.SelectedItem as EF.Product;
+                        empl.IsDeleted = true;
+                        ClassHelper.Appdata.Content.SaveChanges();
+                        MessageBox.Show("Удалено", "Готово", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Filter();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void lvEquipment_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lvEquipment.SelectedItem is EF.Product)
+            {
+                var empl = lvEquipment.SelectedItem as EF.Product;
+
+                AddEmployeeWindow1 addEmployeeWindow1 = new AddEmployeeWindow1(/*empl*/);
+                addEmployeeWindow1.ShowDialog();
+                Filter();
+            }
         }
     }
 }

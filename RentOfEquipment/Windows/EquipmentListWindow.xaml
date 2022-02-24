@@ -44,7 +44,9 @@
             </ComboBox>
         </WrapPanel>
         <ListView x:Name="lvEquipment"
-                  Grid.Row="2">
+                  Grid.Row="2"
+                  KeyDown="lvEquipment_KeyDown"
+                  MouseDoubleClick="lvEquipment_MouseDoubleClick">
             <ListView.View>
                 <GridView >
                     <GridViewColumn Header="Код" Width="150" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
