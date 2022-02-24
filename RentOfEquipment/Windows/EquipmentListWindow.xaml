@@ -21,6 +21,28 @@
                        Margin=" 0 0 0 0">
 
             </TextBlock>
+        <WrapPanel Grid.Row="1"
+                   VerticalAlignment="Center">
+            <TextBlock Text="Поиск"
+                       FontSize="16"
+                       Margin=" 10 0">
+
+            </TextBlock>
+            <TextBox Name="txtSearch"
+                     FontSize="16"
+                     Margin="10 0"
+                     Width="150"
+                     TextChanged="txtSearch_TextChanged">
+
+            </TextBox>
+            <ComboBox x:Name="cmbSor"
+                     FontSize="16"
+                      Margin="10 0"
+                      SelectionChanged="cmbSor_SelectionChanged"
+                     Width="150">
+
+            </ComboBox>
+        </WrapPanel>
         <ListView x:Name="lvEquipment"
                   Grid.Row="2">
             <ListView.View>

@@ -34,7 +34,7 @@ namespace RentOfEquipment.Windows
         {
             List<EF.Client> ListClient = new List<EF.Client>();
 
-            ListClient = ClassHelper.Appdata.Content.Client.ToList();
+            ListClient = ClassHelper.Appdata.Content.Client.Where(i=>i.IsDeleted==false).ToList();
 
             ListClient = ListClient.Where(i => i.FIO.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
 
@@ -100,7 +100,7 @@ namespace RentOfEquipment.Windows
                     if (lvClient.SelectedItem is EF.Client)
                     {
                         var empl = lvClient.SelectedItem as EF.Client;
-                        ClassHelper.Appdata.Content.Client.Remove(empl);
+                        empl.IsDeleted = true;
                         ClassHelper.Appdata.Content.SaveChanges();
                         MessageBox.Show("Удалено", "Готово", MessageBoxButton.OK, MessageBoxImage.Information);
                         Filter();

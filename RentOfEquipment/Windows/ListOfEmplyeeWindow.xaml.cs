@@ -88,7 +88,7 @@ namespace RentOfEquipment.Windows
         {
             Filter();
         }
-
+        
         private void cmbSor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Filter();
@@ -109,7 +109,7 @@ namespace RentOfEquipment.Windows
                     if (lvEmployee.SelectedItem is EF.Employee)
                     {
                         var empl = lvEmployee.SelectedItem as EF.Employee;
-                        ClassHelper.Appdata.Content.Employee.Remove(empl);
+                        empl.IsDeleted = true;
                         ClassHelper.Appdata.Content.SaveChanges();
                         MessageBox.Show("Удалено", "Готово", MessageBoxButton.OK, MessageBoxImage.Information);
                         Filter();
