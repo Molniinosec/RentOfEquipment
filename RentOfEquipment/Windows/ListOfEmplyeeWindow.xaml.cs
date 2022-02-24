@@ -32,7 +32,7 @@ namespace RentOfEquipment.Windows
         {
             List<EF.Employee> ListEmployee = new List<EF.Employee>();
 
-            ListEmployee= ClassHelper.Appdata.Content.Employee.ToList();
+            ListEmployee= ClassHelper.Appdata.Content.Employee.Where(i=>i.IsDeleted==false).ToList();
 
             //Поиск
 
@@ -94,6 +94,7 @@ namespace RentOfEquipment.Windows
             Filter();
         }
 
+        //Удаление
         private void lvEmployee_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key==Key.Delete || e.Key == Key.Back)

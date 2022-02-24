@@ -29,7 +29,7 @@ namespace RentOfEquipment.EF
         public int IDRole { get; set; }
         public string Phone { get; set; }
         public int IDGender { get; set; }
-        public string IsDeleted { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientProduct> ClientProduct { get; set; }

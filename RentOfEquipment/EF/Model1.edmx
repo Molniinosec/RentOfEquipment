@@ -51,7 +51,7 @@
           <Property Name="IDRole" Type="int" Nullable="false" />
           <Property Name="Phone" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="IDGender" Type="int" Nullable="false" />
-          <Property Name="IsDeleted" Type="nchar" MaxLength="10" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -80,7 +80,7 @@
           <Property Name="IDCategory" Type="int" Nullable="false" />
           <Property Name="Warranty" Type="date" Nullable="false" />
           <Property Name="Status" Type="bit" Nullable="false" />
-          <Property Name="IsDeleted" Type="nchar" MaxLength="10" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -410,7 +410,7 @@
           <Property Name="IDRole" Type="Int32" Nullable="false" />
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="IDGender" Type="Int32" Nullable="false" />
-          <Property Name="IsDeleted" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="ClientProduct" Relationship="DBRentEquipmentModel.FK_ClientProduct_Employee" FromRole="Employee" ToRole="ClientProduct" />
           <NavigationProperty Name="Gender" Relationship="DBRentEquipmentModel.FK_Employee1_Gender" FromRole="Employee" ToRole="Gender" />
           <NavigationProperty Name="Role" Relationship="DBRentEquipmentModel.FK_Employee1_Role" FromRole="Employee" ToRole="Role" />
@@ -445,7 +445,7 @@
           <Property Name="IDCategory" Type="Int32" Nullable="false" />
           <Property Name="Warranty" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
-          <Property Name="IsDeleted" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="Category" Relationship="DBRentEquipmentModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="ClientProduct" Relationship="DBRentEquipmentModel.FK_ClientProduct_Product" FromRole="Product" ToRole="ClientProduct" />
         </EntityType>
