@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0557cf653a814f41bea1615fe356e734" Name="Diagram1" ZoomLevel="143">
+      <Diagram DiagramId="0557cf653a814f41bea1615fe356e734" Name="Diagram1" ZoomLevel="60">
         <EntityTypeShape EntityType="DBRentEquipmentModel.Category" Width="1.5" PointX="3.75" PointY="9.625" />
         <EntityTypeShape EntityType="DBRentEquipmentModel.Client" Width="1.5" PointX="3" PointY="3.75" />
         <EntityTypeShape EntityType="DBRentEquipmentModel.ClientProduct" Width="1.5" PointX="8.25" PointY="4.125" />
-        <EntityTypeShape EntityType="DBRentEquipmentModel.Employee" Width="1.5" PointX="6" PointY="3.875" />
+        <EntityTypeShape EntityType="DBRentEquipmentModel.Employee" Width="1.5" PointX="6" PointY="3.75" />
         <EntityTypeShape EntityType="DBRentEquipmentModel.Gender" Width="1.5" PointX="0.75" PointY="4.625" />
         <EntityTypeShape EntityType="DBRentEquipmentModel.Passport" Width="1.5" PointX="0.75" PointY="1.5" />
-        <EntityTypeShape EntityType="DBRentEquipmentModel.Product" Width="1.5" PointX="6" PointY="9" />
+        <EntityTypeShape EntityType="DBRentEquipmentModel.Product" Width="1.5" PointX="6" PointY="8.875" />
         <EntityTypeShape EntityType="DBRentEquipmentModel.Role" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="DBRentEquipmentModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.25" />
         <AssociationConnector Association="DBRentEquipmentModel.FK_Product_Category" />
