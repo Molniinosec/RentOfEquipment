@@ -35,7 +35,6 @@ namespace RentOfEquipment.Windows
 
             products = ClassHelper.Appdata.Content.Product.Where(i => i.IsDeleted == false).ToList();
 
-
             products = products.Where(i => i.Name.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             switch (cmbSor.SelectedIndex)
             {
@@ -115,6 +114,11 @@ namespace RentOfEquipment.Windows
                 addEmployeeWindow1.ShowDialog();
                 Filter();
             }
+        }
+
+        private void btnAddEmployeeInList_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
