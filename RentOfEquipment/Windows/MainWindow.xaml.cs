@@ -67,7 +67,7 @@ namespace RentOfEquipment
         {
             ListOfEmplyeeWindow listOfEmplyeeWindow = new ListOfEmplyeeWindow();
             this.Hide();
-            listOfEmplyeeWindow.ShowDialog();
+            listOfEmplyeeWindow.Show();
             this.Show();
         }
     }

@@ -52,6 +52,7 @@
           <Property Name="Phone" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="IDGender" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Photo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -411,6 +412,7 @@
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="IDGender" Type="Int32" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="ClientProduct" Relationship="DBRentEquipmentModel.FK_ClientProduct_Employee" FromRole="Employee" ToRole="ClientProduct" />
           <NavigationProperty Name="Gender" Relationship="DBRentEquipmentModel.FK_Employee1_Gender" FromRole="Employee" ToRole="Gender" />
           <NavigationProperty Name="Role" Relationship="DBRentEquipmentModel.FK_Employee1_Role" FromRole="Employee" ToRole="Role" />
@@ -632,6 +634,7 @@
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="DBRentEquipmentModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="IDGender" ColumnName="IDGender" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />

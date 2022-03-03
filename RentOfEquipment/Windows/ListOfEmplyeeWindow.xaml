@@ -81,8 +81,111 @@
         <ListView x:Name="lvEmployee"
                   Grid.Row="2"
                   KeyDown="lvEmployee_KeyDown"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   MouseDoubleClick="lvEmployee_MouseDoubleClick">
-            <ListView.View>
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="Green"
+                Width="450"
+                Height="100"
+                BorderThickness="1"
+                BorderBrush="DarkBlue"
+                CornerRadius="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Image x:Name="ImEmployee"
+                                   Grid.RowSpan="3"
+                                   Margin="10"
+                                   >
+                                <Image.Source>
+                                    <Binding Path="Photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/RentOfEquipment;component/Res/PAUSE-3.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                         
+                            <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Фамилия">
+
+                            </TextBlock>
+                            <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Имя">
+
+                            </TextBlock>
+                            <TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Отчество">
+
+                            </TextBlock>
+
+                            <TextBlock Grid.Row="0"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="{Binding SecondName}">
+
+                            </TextBlock>
+                            <TextBlock Grid.Row="1"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="{Binding FirstName}">
+
+                            </TextBlock>
+                            <TextBlock Grid.Row="2"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="{Binding Patronymic}">
+
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+            <!--<ListView.View>
                 <GridView >
                     <GridViewColumn Header="Код" Width="150" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
                     <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding SecondName}"></GridViewColumn>
@@ -92,7 +195,7 @@
                     <GridViewColumn Header="Должность" Width="100" DisplayMemberBinding="{Binding Role.Role1}"></GridViewColumn>
                     <GridViewColumn Header="Гендер" Width="100" DisplayMemberBinding="{Binding Gender.Gender1}"></GridViewColumn>
                 </GridView>
-            </ListView.View>
+            </ListView.View>-->
         </ListView>
         <Button x:Name="btnAddEmployeeInList"
                     Content="+"

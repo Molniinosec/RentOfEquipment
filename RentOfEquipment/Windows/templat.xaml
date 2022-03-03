@@ -1,0 +1,94 @@
+﻿<Window x:Class="RentOfEquipment.Windows.templat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentOfEquipment.Windows"
+        mc:Ignorable="d"
+        Title="templat" Height="450" Width="1000">
+    <Grid>
+        <Border Background="Green"
+                Width="900"
+                Height="100"
+                BorderThickness="1"
+                BorderBrush="DarkBlue"
+                CornerRadius="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Image x:Name="ImEmployee"
+                       Grid.RowSpan="3">
+
+                </Image>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Фамилия">
+                    
+                </TextBlock>
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Имя">
+
+                </TextBlock>
+                <TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Отчество">
+
+                </TextBlock>
+                
+                <TextBlock Grid.Row="0"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Отчество">
+
+                </TextBlock>
+                <TextBlock Grid.Row="1"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Отчество">
+
+                </TextBlock>
+                <TextBlock Grid.Row="2"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0"
+                           FontSize="15"
+                           Text="Отчество">
+
+                </TextBlock>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
