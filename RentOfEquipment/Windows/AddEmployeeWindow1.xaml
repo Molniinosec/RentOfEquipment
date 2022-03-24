@@ -6,12 +6,16 @@
         xmlns:local="clr-namespace:RentOfEquipment.Windows"
         mc:Ignorable="d"
         Title="AddEmployeeWindow1" 
-        Height="550" Width="600"
+        Height="750" Width="600"
         MinHeight="550"
         MinWidth="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -213,9 +217,36 @@
 
         </PasswordBox>
 
+        <Border Background="LightGray"
+                Grid.Row="10"
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="2"
+                Width="150"
+                CornerRadius="10"
+                Margin="10">
+            <Image x:Name="PhotoEmployee" Source="/RentOfEquipment;component/Res/PAUSE-3.png"></Image>
+        </Border>
+
+        <Button x:Name="btnSelect"
+                 Grid.Column="0"
+                 Grid.Row="13"
+                 Width="150"
+                Height="30"
+                Content="Выбрать фото"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                Grid.ColumnSpan="2"
+                 Margin="10 0 10 0"
+                 FontSize="16"
+                Background="{x:Null}"
+                 VerticalContentAlignment="Center"
+                Click="btnSelect_Click">
+
+        </Button>
+
         <Button x:Name="btnAdd"
                  Grid.Column="0"
-                 Grid.Row="10"
+                 Grid.Row="14"
                  Width="150"
                 Height="30"
                 Content="Добавить"

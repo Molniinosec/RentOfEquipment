@@ -19,9 +19,20 @@ namespace RentOfEquipment.Windows
     /// </summary>
     public partial class IssueOfEquipmentWindow : Window
     {
-        public IssueOfEquipmentWindow()
+        EF.Employee globalEmpl;
+        public IssueOfEquipmentWindow(EF.Employee thisEmpl)
         {
             InitializeComponent();
+            globalEmpl = thisEmpl;
+        }
+
+        private void bthAddClient_Click(object sender, RoutedEventArgs e)
+        {
+            bool select=true;
+            ListOfClientWindow listOfClientWindow = new ListOfClientWindow(select);
+            listOfClientWindow.ShowDialog();
+            tbIDClient.Text = ClassHelper.Helper.ClientInfo.ID.ToString();
+            tbClientFIO.Text = ClassHelper.Helper.ClientInfo.LastName.ToString()+" " + ClassHelper.Helper.ClientInfo.FirstName.ToString()+" " + ClassHelper.Helper.ClientInfo.MiddleName.ToString();
         }
     }
 }

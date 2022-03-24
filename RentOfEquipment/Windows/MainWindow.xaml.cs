@@ -21,9 +21,11 @@ namespace RentOfEquipment
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        EF.Employee gloabalEmpl;
+        public MainWindow(EF.Employee thisEmpl)
         {
             InitializeComponent();
+            gloabalEmpl = thisEmpl;
         }
         private void btnListEquip_Click(object sender, RoutedEventArgs e)
         {
@@ -41,7 +43,7 @@ namespace RentOfEquipment
 
         private void btnIssueEquip_Click(object sender, RoutedEventArgs e)
         {
-            IssueOfEquipmentWindow issueOfEquipmentWindow = new IssueOfEquipmentWindow();
+            IssueOfEquipmentWindow issueOfEquipmentWindow = new IssueOfEquipmentWindow(gloabalEmpl);
             issueOfEquipmentWindow.Show();
         }
 

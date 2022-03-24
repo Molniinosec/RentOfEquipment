@@ -83,10 +83,11 @@
 
         <ListView x:Name="lvClient"
                   Grid.Row="2"
+                  MouseDoubleClick="lvClient_MouseDoubleClick"
                   KeyDown="lvClient_KeyDown">
             <ListView.View>
                 <GridView >
-                    <GridViewColumn Header="Код" Width="150" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
+                    <GridViewColumn Header="Код" Width="100" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
                     <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding LastName}"></GridViewColumn>
                     <GridViewColumn Header="Имя" Width="150" DisplayMemberBinding="{Binding FirstName}"></GridViewColumn>
                     <GridViewColumn Header="Отчество" Width="150" DisplayMemberBinding="{Binding MiddleName}"></GridViewColumn>

@@ -29,7 +29,7 @@ namespace RentOfEquipment.Windows
                 Where(i => i.Login == txtLogin.Text && i.Password == txtPassword.Password).FirstOrDefault();
             if (authUser!=null)
             {
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(authUser);
                 mainWindow.Show();
                 this.Close();
             }

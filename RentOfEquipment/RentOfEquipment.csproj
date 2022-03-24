@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClassHelper\Helper.cs" />
     <Compile Include="Windows\templat.xaml.cs">
       <DependentUpon>templat.xaml</DependentUpon>
     </Compile>

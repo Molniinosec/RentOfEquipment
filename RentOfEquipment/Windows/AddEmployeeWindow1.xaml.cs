@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace RentOfEquipment.Windows
     {
         private bool isEdit;
         EF.Employee EditEmployee = new EF.Employee();
+        string pathPhoto = null;
         public AddEmployeeWindow1()
         {
             InitializeComponent();
@@ -48,6 +51,17 @@ namespace RentOfEquipment.Windows
             cmbGender.SelectedIndex = employee.IDGender - 1;
             txtLogin.Text = employee.Login;
             txtPassword.Password= employee.Password;
+
+            using (MemoryStream stream = new MemoryStream(employee.Photo))
+            {
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                bitmapImage.StreamSource = stream;
+                PhotoEmployee.Source = bitmapImage;
+            }
+
             tbTittle.Text = "Изменение сотрудника";
             btnAdd.Content = "Изменить";
             isEdit = true;
@@ -126,6 +140,10 @@ namespace RentOfEquipment.Windows
                EditEmployee.IDGender = (cmbGender.SelectedItem as EF.Gender).ID;
                EditEmployee.Login = txtLogin.Text;
                EditEmployee.Password = txtPassword.Password;
+                if (pathPhoto != null)
+                {
+                    EditEmployee.Photo = File.ReadAllBytes(pathPhoto);
+                }
 
                 ClassHelper.Appdata.Content.SaveChanges();
 
@@ -154,6 +172,10 @@ namespace RentOfEquipment.Windows
                     modelEmployee.IDGender = (cmbGender.SelectedItem as EF.Gender).ID;
                     modelEmployee.Login = txtLogin.Text;
                     modelEmployee.Password = txtPassword.Password;
+                    if (pathPhoto != null)
+                    {
+                        EditEmployee.Photo = File.ReadAllBytes(pathPhoto);
+                    }
                     ClassHelper.Appdata.Content.Employee.Add(modelEmployee);
                     ClassHelper.Appdata.Content.SaveChanges();
 
@@ -175,6 +197,15 @@ namespace RentOfEquipment.Windows
         {
             e.Handled = "1234567890+-".IndexOf(e.Text) < 0;
         }
-     
+
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (openFile.ShowDialog() == true)
+            {
+                PhotoEmployee.Source =new BitmapImage(new Uri(openFile.FileName));
+                pathPhoto = openFile.FileName;
+            }
+        }
     }
 }

@@ -20,6 +20,9 @@ namespace RentOfEquipment.Windows
     public partial class ListOfClientWindow : Window
     {
         List<string> ListSort = new List<string> { "По умолчанию", "По фамилии", "По имени", "По гендеру" };
+        int ClID;
+        string ClFIO;
+        bool isSelected = false;
 
         public ListOfClientWindow()
         {
@@ -28,6 +31,14 @@ namespace RentOfEquipment.Windows
             cmbSor.ItemsSource = ListSort;
             cmbSor.SelectedIndex = 0;
 
+        }
+        public ListOfClientWindow(bool select)
+        {
+            InitializeComponent();
+            Filter();
+            cmbSor.ItemsSource = ListSort;
+            cmbSor.SelectedIndex = 0;
+            isSelected = true;
         }
 
         public void Filter()
@@ -111,6 +122,15 @@ namespace RentOfEquipment.Windows
 
                     MessageBox.Show(ex.Message.ToString());
                 }
+            }
+        }
+
+        private void lvClient_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (isSelected == true)
+            {
+                ClassHelper.Helper.ClientInfo = lvClient.SelectedItem as EF.Client;
+                this.Close();
             }
         }
     }
