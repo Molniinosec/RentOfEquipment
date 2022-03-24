@@ -34,5 +34,14 @@ namespace RentOfEquipment.Windows
             tbIDClient.Text = ClassHelper.Helper.ClientInfo.ID.ToString();
             tbClientFIO.Text = ClassHelper.Helper.ClientInfo.LastName.ToString()+" " + ClassHelper.Helper.ClientInfo.FirstName.ToString()+" " + ClassHelper.Helper.ClientInfo.MiddleName.ToString();
         }
+
+        private void bthAddEquipment_Click(object sender, RoutedEventArgs e)
+        {
+            bool select = true;
+            EquipmentListWindow equipmentListWindow = new EquipmentListWindow(select);
+            equipmentListWindow.ShowDialog();
+            tbIDEquipment.Text = ClassHelper.Helper.EquipmentInfo.ID.ToString();
+            tbEquipmentTittle.Text = ClassHelper.Helper.EquipmentInfo.Name.ToString();
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace RentOfEquipment.Windows
     public partial class EquipmentListWindow : Window
     {
         List<string> ListSort = new List<string> { "По ID","По названию", "По цене", "По категории" };
+        bool isSelected = false;
         public EquipmentListWindow()
         {
             InitializeComponent();
@@ -27,7 +28,15 @@ namespace RentOfEquipment.Windows
             cmbSor.ItemsSource = ListSort;
             cmbSor.SelectedIndex = 0;
         }
-     
+        public EquipmentListWindow(bool select)
+        {
+            InitializeComponent();
+            Filter();
+            cmbSor.ItemsSource = ListSort;
+            cmbSor.SelectedIndex = 0;
+            isSelected = true;
+        }
+
 
         public void Filter()
         {
@@ -106,14 +115,23 @@ namespace RentOfEquipment.Windows
 
         private void lvEquipment_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (lvEquipment.SelectedItem is EF.Product)
+            if (isSelected == true)
             {
-                var empl = lvEquipment.SelectedItem as EF.Product;
-
-                AddEmployeeWindow1 addEmployeeWindow1 = new AddEmployeeWindow1(/*empl*/);
-                addEmployeeWindow1.ShowDialog();
-                Filter();
+                ClassHelper.Helper.EquipmentInfo = lvEquipment.SelectedItem as EF.Product;
+                this.Close();
             }
+            else
+            {
+                if (lvEquipment.SelectedItem is EF.Product)
+                {
+                    var empl = lvEquipment.SelectedItem as EF.Product;
+
+                    AddEmployeeWindow1 addEmployeeWindow1 = new AddEmployeeWindow1(/*empl*/);
+                    addEmployeeWindow1.ShowDialog();
+                    Filter();
+                }
+            }
+           
         }
 
         private void btnAddEmployeeInList_Click(object sender, RoutedEventArgs e)

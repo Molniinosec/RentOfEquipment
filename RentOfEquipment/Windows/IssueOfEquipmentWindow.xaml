@@ -46,7 +46,8 @@
                     HorizontalAlignment="Left"
                     Margin=" 25"
                     Content="Выбрать оборудование"
-                    FontSize="18">
+                    FontSize="18"
+                    Click="bthAddEquipment_Click">
 
         </Button>
 
