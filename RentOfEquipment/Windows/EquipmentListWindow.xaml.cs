@@ -126,7 +126,7 @@ namespace RentOfEquipment.Windows
                 {
                     var empl = lvEquipment.SelectedItem as EF.Product;
 
-                    AddEquipmentWindow addEquipmentWindow = new AddEquipmentWindow();
+                    AddEquipmentWindow addEquipmentWindow = new AddEquipmentWindow(empl);
                     addEquipmentWindow.ShowDialog();
                     Filter();
                 }
