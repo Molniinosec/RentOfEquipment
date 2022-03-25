@@ -20,8 +20,6 @@ namespace RentOfEquipment.Windows
     public partial class ListOfClientWindow : Window
     {
         List<string> ListSort = new List<string> { "По умолчанию", "По фамилии", "По имени", "По гендеру" };
-        int ClID;
-        string ClFIO;
         bool isSelected = false;
 
         public ListOfClientWindow()

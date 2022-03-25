@@ -108,7 +108,6 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
                    Margin=" 50 00 0 0"
-                   Text="ID"
                    FontSize="18"
                    TextAlignment="Center">
 
@@ -121,7 +120,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Margin=" 50 0 0 0"
-                   Text="Фио Сотрудника"
+                   
                    FontSize="18"
                    TextAlignment="Center">
 
@@ -134,7 +133,6 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
                    Margin=" 50 00 0 0"
-                   Text="ID"
                    FontSize="18"
                    TextAlignment="Center">
 
@@ -147,7 +145,6 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Margin=" 50 0 0 0"
-                   Text="Фио Сотрудника"
                    FontSize="18"
                    TextAlignment="Center">
 
@@ -208,7 +205,8 @@
                     HorizontalAlignment="Center"
                     Margin=" 25"
                     Content="Арендовать"
-                    FontSize="18">
+                    FontSize="18"
+                    Click="btnRent_Click">
 
         </Button>
     </Grid>

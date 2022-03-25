@@ -43,5 +43,23 @@ namespace RentOfEquipment.Windows
             tbIDEquipment.Text = ClassHelper.Helper.EquipmentInfo.ID.ToString();
             tbEquipmentTittle.Text = ClassHelper.Helper.EquipmentInfo.Name.ToString();
         }
+
+        private void btnRent_Click(object sender, RoutedEventArgs e)
+        {
+            if(tbClientFIO!=null &&tbIDClient!=null && tbEquipmentTittle!=null && tbIDEquipment != null)
+            {
+                EF.ClientProduct modelClientProduct = new EF.ClientProduct();
+                modelClientProduct.ClientID =Convert.ToInt32(tbIDClient.Text);
+                modelClientProduct.ProductID =Convert.ToInt32(tbIDEquipment.Text);
+                modelClientProduct.EmployeeID = Convert.ToInt32(globalEmpl.ID);
+                modelClientProduct.RentStartDate = dataStart.DisplayDate;
+                modelClientProduct.RentEndDate = dataEnd.DisplayDate;
+
+                ClassHelper.Appdata.Content.ClientProduct.Add(modelClientProduct);
+                ClassHelper.Appdata.Content.SaveChanges();
+                MessageBox.Show("Данные аренды добавлены", "Успешно");
+                this.Close();
+            }
+        }
     }
 }

@@ -126,8 +126,8 @@ namespace RentOfEquipment.Windows
                 {
                     var empl = lvEquipment.SelectedItem as EF.Product;
 
-                    AddEmployeeWindow1 addEmployeeWindow1 = new AddEmployeeWindow1(/*empl*/);
-                    addEmployeeWindow1.ShowDialog();
+                    AddEquipmentWindow addEquipmentWindow = new AddEquipmentWindow();
+                    addEquipmentWindow.ShowDialog();
                     Filter();
                 }
             }
@@ -136,7 +136,9 @@ namespace RentOfEquipment.Windows
 
         private void btnAddEmployeeInList_Click(object sender, RoutedEventArgs e)
         {
-
+            AddEquipmentWindow addEquipmentWindow = new AddEquipmentWindow();
+            addEquipmentWindow.ShowDialog();
+            Filter();
         }
     }
 }

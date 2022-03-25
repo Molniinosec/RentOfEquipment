@@ -22,6 +22,40 @@ namespace RentOfEquipment.Windows
         public AddEquipmentWindow()
         {
             InitializeComponent();
+            cmbCategory.ItemsSource = ClassHelper.Appdata.Content.Category.ToList();
+            cmbCategory.DisplayMemberPath = "Name";
+            cmbCategory.SelectedIndex = 0;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var resClick = MessageBox.Show("Вы уверенны?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            if (resClick == MessageBoxResult.No)
+            {
+                return;
+            }
+
+            try
+            {
+                EF.Product modelEquipment = new EF.Product();
+
+                modelEquipment.Name = txtName.Text;
+                modelEquipment.Description = txtDescription.Text;
+                modelEquipment.Cost =Convert.ToDecimal(txtCost.Text);
+                modelEquipment.IDCategory = (cmbCategory.SelectedItem as EF.Category).ID;
+                modelEquipment.Warranty = dataWaranty.DisplayDate;
+                modelEquipment.IsDeleted = false;
+
+                ClassHelper.Appdata.Content.Product.Add(modelEquipment);
+                ClassHelper.Appdata.Content.SaveChanges();
+
+                MessageBox.Show("Оборудование добавлено");
+                this.Close();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message).ToString();
+            }
         }
     }
 }
