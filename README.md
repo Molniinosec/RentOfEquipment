@@ -80,6 +80,26 @@
 Теперь в Списке сотрудников Отображается не перостой список, а переделанный в более красивый вид список. (Фотография стоит по умолчанию, а по логике должна быть из базы)<br>
 ![image](https://user-images.githubusercontent.com/80753761/156557341-32ea65c5-323b-40f0-a765-dba3f1791e34.png) <br>
 
+//Изменения за 31/03/22<br>
+
+Добавлена рабочая система выдачи оборудования (Аренды) <br>
+![image](https://user-images.githubusercontent.com/80753761/161135970-5ee69863-9cf0-41dd-8987-a9c90fb77961.png) <br>
+
+Здесь мы выбираем клиента, что берет аренду, сам товар и дату начала и конца аренды <br>
+![image](https://user-images.githubusercontent.com/80753761/161136104-48ad60cf-65ab-4f21-881b-777317d3ae45.png) <br>
+
+Выбор клиента и оборудования сделан на двойное нажатие по нужному клиенту/оборудованию <br>
+![image](https://user-images.githubusercontent.com/80753761/161136314-9c3a9daa-ca5a-4921-a6f7-0aed844f33c5.png) <br>
+![image](https://user-images.githubusercontent.com/80753761/161136366-854f2b82-caaa-4676-a2a2-dda90f46fef7.png) <br>
+![image](https://user-images.githubusercontent.com/80753761/161136461-b93db395-c5c8-4051-a223-4a3d8db319d0.png) <br>
+
+После нажатия "Арендовать" новая запись будет добавлена в список аренд <br>
+![image](https://user-images.githubusercontent.com/80753761/161136623-8e475dea-6801-4077-8a23-9c7570df30d1.png)<br>
+Так же тут высчитывается цена за аренду (Но пока не правильно)<br>
+![image](https://user-images.githubusercontent.com/80753761/161136802-f2d8cb97-bf5c-4441-a077-6e751c645107.png)<br>
+
+
+
 
 
 
