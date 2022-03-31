@@ -65,6 +65,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\Helper.cs" />
+    <Compile Include="Windows\ListOfRent.xaml.cs">
+      <DependentUpon>ListOfRent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\templat.xaml.cs">
       <DependentUpon>templat.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ListOfEmplyeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ListOfRent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

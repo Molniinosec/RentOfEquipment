@@ -47,11 +47,6 @@ namespace RentOfEquipment
             issueOfEquipmentWindow.Show();
         }
 
-        private void btnAcceptEquip_Click(object sender, RoutedEventArgs e)
-        {
-            AcceptOfEquipmentWindow acceptOfEquipmentWindow = new AcceptOfEquipmentWindow();
-            acceptOfEquipmentWindow.Show();
-        }
 
         private void btnListClient_Click(object sender, RoutedEventArgs e)
         {
@@ -71,6 +66,13 @@ namespace RentOfEquipment
             this.Hide();
             listOfEmplyeeWindow.Show();
             this.Show();
+        }
+
+        private void btnListOfRent_Click(object sender, RoutedEventArgs e)
+        {
+            ListOfRent listOfRent = new ListOfRent();
+            listOfRent.ShowDialog();
+
         }
     }
 }

@@ -47,11 +47,7 @@ namespace RentOfEquipment.Windows
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            var resClick = MessageBox.Show("Вы уверенны?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Information);
-            if (resClick == MessageBoxResult.No)
-            {
-                return;
-            }
+
 
             try
             {
