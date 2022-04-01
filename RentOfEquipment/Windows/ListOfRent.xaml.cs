@@ -30,8 +30,9 @@ namespace RentOfEquipment.Windows
         {
             foreach (EF.ClientProduct cp in list) 
             {
-                TimeSpan time =cp.RentEndDate - cp.RentStartDate;
-                cp.Product.Cost =Convert.ToDecimal((Convert.ToDouble(cp.Product.Cost)*0.05)*time.Days);
+                TimeSpan time =(cp.RentEndDate - cp.RentStartDate);
+                int timer =Convert.ToInt32( time.TotalDays);
+                cp.Product.Cost =Convert.ToDecimal((Convert.ToDouble(cp.Product.Cost)*0.05)*(timer+2));
             }
             return list;
         }
