@@ -23,9 +23,7 @@
         </TextBlock>
 
         <ListView x:Name="lvRent"
-                  Grid.Row="2"
-                  MouseDoubleClick="lvClient_MouseDoubleClick"
-                  KeyDown="lvClient_KeyDown">
+                  Grid.Row="2">
             <ListView.View>
                 <GridView >
                     <GridViewColumn Header="Код" Width="100" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
