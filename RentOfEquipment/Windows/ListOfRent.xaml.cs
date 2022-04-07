@@ -19,10 +19,12 @@ namespace RentOfEquipment.Windows
     /// </summary>
     public partial class ListOfRent : Window
     {
-        List<string> ListSort = new List<string> { "По умолчанию", "По Клиенту", "По Сотруднику" };
-        public ListOfRent()
+        EF.Employee globalEmpl;
+        List<string> ListSort = new List<string> { "По умолчанию", "По Клиенту", "По Сотруднику","По Оборудованию" };
+        public ListOfRent(EF.Employee thisEmpl)
         {
             InitializeComponent();
+            globalEmpl = thisEmpl;
             List<EF.ClientProduct> listRent = new List<EF.ClientProduct>();
 
             listRent = ClassHelper.Appdata.Content.ClientProduct.ToList();
@@ -71,6 +73,11 @@ namespace RentOfEquipment.Windows
                         listRent = listRent.OrderBy(i => i.Employee.SecondName).ToList();
                         break;
                     }
+                case 3:
+                    {
+                        listRent = listRent.OrderBy(i => i.Product.Name).ToList();
+                        break;
+                    }
                 default:
                     listRent = listRent.OrderBy(i => i.ID).ToList();
                     break;
@@ -86,5 +93,7 @@ namespace RentOfEquipment.Windows
         {
             Filter();
         }
+
+
     }
 }

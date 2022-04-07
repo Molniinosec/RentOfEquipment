@@ -70,7 +70,7 @@ namespace RentOfEquipment
 
         private void btnListOfRent_Click(object sender, RoutedEventArgs e)
         {
-            ListOfRent listOfRent = new ListOfRent();
+            ListOfRent listOfRent = new ListOfRent(gloabalEmpl);
             listOfRent.ShowDialog();
 
         }

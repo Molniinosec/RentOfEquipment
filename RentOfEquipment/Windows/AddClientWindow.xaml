@@ -18,6 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -88,8 +89,16 @@
                    FontSize="16">
 
         </TextBlock>
-        <TextBlock Text="ID Паспорта"
+        <TextBlock Text="Серия Паспорта"
                    Grid.Row="8"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="10 0 10 0"
+                   FontSize="16">
+
+        </TextBlock>
+        <TextBlock Text="Номер Паспорта"
+                   Grid.Row="9"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -176,7 +185,7 @@
                  VerticalContentAlignment="Center">
 
         </TextBox>
-        <TextBox x:Name="txtPassportID"
+        <TextBox x:Name="txtSerialPassport"
                  Grid.Column="1"
                  Grid.Row="8"
                  Width="200"
@@ -184,6 +193,19 @@
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
                  FontSize="16"
+                 MaxLength="4"
+                 VerticalContentAlignment="Center">
+
+        </TextBox>
+        <TextBox x:Name="txtNumberPassport"
+                 Grid.Column="1"
+                 Grid.Row="9"
+                 Width="200"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="10 0 10 0"
+                 FontSize="16"
+                 MaxLength="6"
                  VerticalContentAlignment="Center">
 
         </TextBox>

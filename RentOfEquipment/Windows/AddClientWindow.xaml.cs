@@ -53,15 +53,29 @@ namespace RentOfEquipment.Windows
             }
             try
             {
+                EF.Passport modelPassport = new EF.Passport();
+                modelPassport.Number = txtNumberPassport.Text;
+                modelPassport.Serial = txtSerialPassport.Text;
+                ClassHelper.Appdata.Content.Passport.Add(modelPassport);
+                ClassHelper.Appdata.Content.SaveChanges();
+                var passport = ClassHelper.Appdata.Content.Passport.Where(i => i.Serial == txtSerialPassport.Text && i.Number == txtNumberPassport.Text).FirstOrDefault();
+
                 EF.Client modelClient = new EF.Client();
                 modelClient.LastName = txtLName.Text;
-                modelClient.FirstName = txtLName.Text;
+                modelClient.FirstName = txtFName.Text;
                 modelClient.MiddleName = txtMName.Text;
                 modelClient.GenderID = (cmbGender.SelectedItem as EF.Gender).ID;
                 modelClient.Birthday = dpBirthday.DisplayDate;
                 modelClient.Email = txtMail.Text;
                 modelClient.Phone = txtPhone.Text;
-                modelClient.PassportID = Convert.ToInt32(txtPassportID.Text);
+                if (passport != null)
+                {
+                    modelClient.PassportID = passport.ID;
+                }
+                else
+                {
+                    return;
+                }
                 ClassHelper.Appdata.Content.Client.Add(modelClient);
                 ClassHelper.Appdata.Content.SaveChanges();
 

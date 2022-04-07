@@ -10,5 +10,7 @@ namespace RentOfEquipment.ClassHelper
     {
         public static EF.Client ClientInfo { get; set; }
         public static EF.Product EquipmentInfo { get; set; }
+
+        public static EF.Passport PassportInfo { get; set; }
     }
 }

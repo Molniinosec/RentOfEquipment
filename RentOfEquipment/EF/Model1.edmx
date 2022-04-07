@@ -66,7 +66,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClientID" Type="int" Nullable="false" />
           <Property Name="Serial" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Number" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
@@ -431,7 +430,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClientID" Type="Int32" Nullable="false" />
           <Property Name="Serial" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Number" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Client" Relationship="DBRentEquipmentModel.FK_Client_Passport" FromRole="Passport" ToRole="Client" />
@@ -661,7 +659,6 @@
               <MappingFragment StoreEntitySet="Passport">
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="Serial" ColumnName="Serial" />
-                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
