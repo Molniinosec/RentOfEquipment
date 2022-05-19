@@ -9,6 +9,12 @@
 
 
     <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFF5F6B5" Offset="1"/>
+                <GradientStop Color="White"/>
+            </RadialGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -17,6 +23,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Спимок аренд" 
+                   Style="{DynamicResource textFamily}"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="20"

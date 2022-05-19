@@ -8,6 +8,12 @@
       WindowStartupLocation="CenterScreen"
         Title="AddClientWindow" Height="550" Width="600">
     <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFF5F6B5" Offset="1"/>
+                <GradientStop Color="White"/>
+            </RadialGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -27,6 +33,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Добавление клиента" 
                    x:Name="tbtittle"
+                   Style="{DynamicResource textFamily}"
                        Grid.ColumnSpan="2"
                        HorizontalAlignment="Center"
                        FontSize="20"
@@ -35,6 +42,7 @@
             </TextBlock>
 
         <TextBlock Text="Фамилия"
+                   FontFamily="Trebuchet MS"
                    Grid.Row="1"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
@@ -43,6 +51,7 @@
 
         </TextBlock>
         <TextBlock Text="Имя"
+                   FontFamily="Trebuchet MS"
                    Grid.Row="2"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
@@ -51,6 +60,7 @@
 
         </TextBlock>
         <TextBlock Text="Отчество"
+                   FontFamily="Trebuchet MS"
                    Grid.Row="3"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
@@ -60,6 +70,7 @@
         </TextBlock>
         <TextBlock Text="Гендер"
                    Grid.Row="4"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -68,6 +79,7 @@
         </TextBlock>
         <TextBlock Text="День рождения"
                    Grid.Row="5"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -76,6 +88,7 @@
         </TextBlock>
         <TextBlock Text="Email"
                    Grid.Row="6"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -84,6 +97,7 @@
         </TextBlock>
         <TextBlock Text="Телефон"
                    Grid.Row="7"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -92,6 +106,7 @@
         </TextBlock>
         <TextBlock Text="Серия Паспорта"
                    Grid.Row="8"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -100,6 +115,7 @@
         </TextBlock>
         <TextBlock Text="Номер Паспорта"
                    Grid.Row="9"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -109,6 +125,7 @@
 
         <TextBox x:Name="txtLName"
                  Grid.Column="1"
+                 FontFamily="Trebuchet MS"
                  Grid.Row="1"
                  Width="200"
                  HorizontalAlignment="Center"
@@ -120,6 +137,7 @@
         </TextBox>
         <TextBox x:Name="txtFName"
                  Grid.Column="1"
+                 FontFamily="Trebuchet MS"
                  Grid.Row="2"
                  Width="200"
                  HorizontalAlignment="Center"
@@ -132,6 +150,7 @@
         <TextBox x:Name="txtMName"
                  Grid.Column="1"
                  Grid.Row="3"
+                 FontFamily="Trebuchet MS"
                  Width="200"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
@@ -143,6 +162,7 @@
         <ComboBox x:Name="cmbGender"
                  Grid.Column="1"
                  Grid.Row="4"
+                  FontFamily="Trebuchet MS"
                  Width="200"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
@@ -155,6 +175,7 @@
         <DatePicker x:Name="dpBirthday"
                     Grid.Column="1"
                     Grid.Row="5"
+                    FontFamily="Trebuchet MS"
                     Width="200"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
@@ -168,6 +189,7 @@
                  Grid.Column="1"
                  Grid.Row="6"
                  Width="200"
+                 FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -179,6 +201,7 @@
                  Grid.Column="1"
                  Grid.Row="7"
                  Width="200"
+                 FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -190,6 +213,7 @@
                  Grid.Column="1"
                  Grid.Row="8"
                  Width="200"
+                 FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -202,6 +226,7 @@
                  Grid.Column="1"
                  Grid.Row="9"
                  Width="200"
+                 FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -211,6 +236,7 @@
 
         </TextBox>
         <Button x:Name="btnAdd"
+                Style="{DynamicResource ButtonDefault}"
                  Grid.Column="0"
                  Grid.Row="10"
                  Width="150"

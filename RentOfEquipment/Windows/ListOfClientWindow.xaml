@@ -66,6 +66,12 @@
     </Window.Resources>
 
     <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFF5F6B5" Offset="1"/>
+                <GradientStop Color="White"/>
+            </RadialGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -73,10 +79,11 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
-            <TextBlock Text="Спимок клиентов" 
+            <TextBlock Text="Список клиентов" 
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="20"
+                       Style="{DynamicResource textFamily}"
                        Margin=" 0 0 0 0">
 
             </TextBlock>

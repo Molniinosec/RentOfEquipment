@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:RentOfEquipment"
              StartupUri="Windows/AuthWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="ButtonDefault" TargetType="Button">
+            <Setter Property="Background" Value="BlueViolet"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="Trebuchet MS"></Setter>
+        </Style>
+        <Style x:Key="textFamily" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Cooper Black"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RentOfEquipment.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ListOfEmplyeeWindow" Height="600" Width="1000">
+        Title="ListOfEmplyeeWindow" Height="600" Width="970">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -65,6 +65,12 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFF5F6B5" Offset="1"/>
+                <GradientStop Color="White"/>
+            </RadialGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -73,6 +79,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Список сотрудников" 
+                   Style="{DynamicResource textFamily}"
                        HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                        FontSize="20">
@@ -91,7 +98,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="Green"
+                    <Border Background="MediumPurple"
                 Width="450"
                 Height="100"
                 BorderThickness="1"

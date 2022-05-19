@@ -40,16 +40,7 @@ namespace RentOfEquipment.Windows
 
         }
 
-        //public List<EF.ClientProduct> TotalCost(List<EF.ClientProduct> list)
-        //{
-        //    foreach (EF.ClientProduct cp in list)
-        //    {
-        //        TimeSpan time = (cp.RentEndDate - cp.RentStartDate);
-        //        int timer = Convert.ToInt32(time.TotalDays);
-        //        cp.Product.Cost = Math.Round(Convert.ToDecimal((Convert.ToDouble(cp.Product.Cost) * 0.05) * (timer + 1)), 2);
-        //    }
-        //    return list;
-        //}
+
         public void Filter()
         {
             List<EF.ClientProduct> listRent = new List<EF.ClientProduct>();

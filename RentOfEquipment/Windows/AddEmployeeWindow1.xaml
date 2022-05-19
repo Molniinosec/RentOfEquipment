@@ -11,6 +11,12 @@
         MinHeight="550"
         MinWidth="600">
     <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFF5F6B5" Offset="1"/>
+                <GradientStop Color="White"/>
+            </RadialGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
@@ -35,6 +41,7 @@
 
         
         <TextBlock x:Name="tbTittle"
+                   Style="{DynamicResource textFamily}"
                    Text="Добавление сотрудников" 
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Center"
@@ -45,6 +52,7 @@
 
         <TextBlock Text="Фамилия"
                    Grid.Row="1"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -53,6 +61,7 @@
         </TextBlock>
         <TextBlock Text="Имя"
                    Grid.Row="2"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -61,6 +70,7 @@
         </TextBlock>
         <TextBlock Text="Отчество"
                    Grid.Row="3"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -69,6 +79,7 @@
         </TextBlock>
         <TextBlock Text="Телефон"
                    Grid.Row="4"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -77,6 +88,7 @@
         </TextBlock>
         <TextBlock Text="Гендер"
                    Grid.Row="5"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -85,6 +97,7 @@
         </TextBlock>
         <TextBlock Text="Роль"
                    Grid.Row="6"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -93,6 +106,7 @@
         </TextBlock>
         <TextBlock Text="Логмн"
                    Grid.Row="7"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -101,6 +115,7 @@
         </TextBlock>
         <TextBlock Text="Пароль"
                    Grid.Row="8"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -109,6 +124,7 @@
         </TextBlock>
         <TextBlock Text="Повторите Пароль"
                    Grid.Row="9"
+                   FontFamily="Trebuchet MS"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
                    Margin="10 0 10 0"
@@ -119,6 +135,7 @@
         <TextBox x:Name="txtLName"
                  Grid.Column="1"
                  Grid.Row="1"
+                 FontFamily="Trebuchet MS"
                  Width="200"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
@@ -130,6 +147,7 @@
         <TextBox x:Name="txtFName"
                  Grid.Column="1"
                  Grid.Row="2"
+                 FontFamily="Trebuchet MS"
                  Width="200"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
@@ -142,6 +160,7 @@
                  Grid.Column="1"
                  Grid.Row="3"
                  Width="200"
+                 FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -153,6 +172,7 @@
                  Grid.Column="1"
                  Grid.Row="4"
                  Width="200"         
+                 FontFamily="Trebuchet MS"
                  PreviewTextInput="txtPhone_PreviewTextInput"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
@@ -166,6 +186,7 @@
                   Grid.Column="1"
                    Grid.Row="5"
                   Width="200"
+                  FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -177,6 +198,7 @@
                  Grid.Column="1"
                  Grid.Row="6"
                  Width="200"
+                  FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -188,6 +210,7 @@
                  Grid.Column="1"
                  Grid.Row="7"
                  Width="200"
+                 FontFamily="Trebuchet MS"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Margin="10 0 10 0"
@@ -198,6 +221,7 @@
         <PasswordBox x:Name="txtPassword"
                  Grid.Column="1"
                  Grid.Row="8"
+                     FontFamily="Trebuchet MS"
                  Width="200"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
@@ -209,6 +233,7 @@
         <PasswordBox x:Name="txtRepeatPassword"
                  Grid.Column="1"
                  Grid.Row="9"
+                     FontFamily="Trebuchet MS"
                  Width="200"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
@@ -249,6 +274,7 @@
         <Button x:Name="btnAdd"
                  Grid.Column="0"
                  Grid.Row="14"
+                 Style="{DynamicResource ButtonDefault}"
                  Width="150"
                 Height="30"
                 Content="Добавить"
