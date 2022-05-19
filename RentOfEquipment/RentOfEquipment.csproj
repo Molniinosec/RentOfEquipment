@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\PartialProduct.cs" />
     <Compile Include="ClassHelper\Helper.cs" />
     <Compile Include="Windows\ListOfRent.xaml.cs">
       <DependentUpon>ListOfRent.xaml</DependentUpon>

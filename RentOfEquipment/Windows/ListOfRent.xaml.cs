@@ -31,7 +31,7 @@ namespace RentOfEquipment.Windows
             listRent = ClassHelper.Appdata.Content.ClientProduct.ToList();
             foreach (EF.ClientProduct cp in listRent)
             {
-                cp.Product.Cost = LibbraryCalculate.ClientsServiceClass.TotalCost(cp.RentStartDate,cp.RentEndDate,Convert.ToDouble(cp.Product.Cost));
+                cp.Product.RentCost = LibbraryCalculate.ClientsServiceClass.TotalCost(cp.RentStartDate,cp.RentEndDate,Convert.ToDouble(cp.Product.Cost));
 
             }
             Filter();

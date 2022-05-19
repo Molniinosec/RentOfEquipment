@@ -34,7 +34,7 @@
                     <GridViewColumn Header="Фамилия Сотрудник" Width="150" DisplayMemberBinding="{Binding Employee.SecondName}"></GridViewColumn>
                     <GridViewColumn Header="Начало аренды" Width="150" DisplayMemberBinding="{Binding RentStartDate}"></GridViewColumn>
                     <GridViewColumn Header="Конец аренды" Width="150" DisplayMemberBinding="{Binding RentEndDate}"></GridViewColumn>
-                    <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding Product.Cost}"></GridViewColumn>
+                    <GridViewColumn Header="Цена" Width="100" DisplayMemberBinding="{Binding Product.RentCost}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
