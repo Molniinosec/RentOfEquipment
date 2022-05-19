@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="AddEmployeeWindow1" 
         Height="750" Width="600"
+        WindowStartupLocation="CenterScreen"
         MinHeight="550"
         MinWidth="600">
     <Grid>
@@ -224,7 +225,8 @@
                 Width="150"
                 CornerRadius="10"
                 Margin="10">
-            <Image x:Name="PhotoEmployee" Source="/RentOfEquipment;component/Res/PAUSE-3.png"></Image>
+                <Image x:Name="PhotoEmployee" Source="/RentOfEquipment;component/Res/PAUSE-3.png"></Image>
+
         </Border>
 
         <Button x:Name="btnSelect"

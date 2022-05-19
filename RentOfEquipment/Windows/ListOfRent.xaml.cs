@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace RentOfEquipment.Windows
 {
     /// <summary>
@@ -26,25 +28,28 @@ namespace RentOfEquipment.Windows
             InitializeComponent();
             globalEmpl = thisEmpl;
             List<EF.ClientProduct> listRent = new List<EF.ClientProduct>();
-
             listRent = ClassHelper.Appdata.Content.ClientProduct.ToList();
-            listRent = TotalCost(listRent);
+            foreach (EF.ClientProduct cp in listRent)
+            {
+                cp.Product.Cost = LibbraryCalculate.ClientsServiceClass.TotalCost(cp.RentStartDate,cp.RentEndDate,Convert.ToDouble(cp.Product.Cost));
+
+            }
             Filter();
             cmbSor.ItemsSource = ListSort;
             cmbSor.SelectedIndex = 0;
 
         }
 
-        public List<EF.ClientProduct> TotalCost(List<EF.ClientProduct> list) 
-        {
-            foreach (EF.ClientProduct cp in list) 
-            {
-                TimeSpan time =(cp.RentEndDate - cp.RentStartDate);
-                int timer =Convert.ToInt32( time.TotalDays);
-                cp.Product.Cost =Convert.ToDecimal((Convert.ToDouble(cp.Product.Cost)*0.05)*(timer+2));
-            }
-            return list;
-        }
+        //public List<EF.ClientProduct> TotalCost(List<EF.ClientProduct> list)
+        //{
+        //    foreach (EF.ClientProduct cp in list)
+        //    {
+        //        TimeSpan time = (cp.RentEndDate - cp.RentStartDate);
+        //        int timer = Convert.ToInt32(time.TotalDays);
+        //        cp.Product.Cost = Math.Round(Convert.ToDecimal((Convert.ToDouble(cp.Product.Cost) * 0.05) * (timer + 1)), 2);
+        //    }
+        //    return list;
+        //}
         public void Filter()
         {
             List<EF.ClientProduct> listRent = new List<EF.ClientProduct>();

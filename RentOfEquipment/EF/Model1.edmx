@@ -81,6 +81,7 @@
           <Property Name="Warranty" Type="date" Nullable="false" />
           <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Weat" Type="decimal" Precision="3" Scale="2" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -446,6 +447,7 @@
           <Property Name="Warranty" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Weat" Type="Decimal" Precision="3" Scale="2" />
           <NavigationProperty Name="Category" Relationship="DBRentEquipmentModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="ClientProduct" Relationship="DBRentEquipmentModel.FK_ClientProduct_Product" FromRole="Product" ToRole="ClientProduct" />
         </EntityType>
@@ -666,6 +668,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="DBRentEquipmentModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Weat" ColumnName="Weat" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Warranty" ColumnName="Warranty" />

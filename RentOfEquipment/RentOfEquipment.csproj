@@ -259,5 +259,11 @@
   <ItemGroup>
     <Folder Include="Pages\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibbraryCalculate\LibbraryCalculate.csproj">
+      <Project>{1f910902-ce9e-423d-97a8-9df7f420227c}</Project>
+      <Name>LibbraryCalculate</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

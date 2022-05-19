@@ -47,8 +47,26 @@ namespace RentOfEquipment.Windows
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
-
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Поле Название не должно быть пустым", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                MessageBox.Show("Поле Описание не должно быть пустым", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtCost.Text))
+            {
+                MessageBox.Show("Поле Цена не должно быть пустым", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(dataWaranty.Text))
+            {
+                MessageBox.Show("Поле Гарантия не должно быть пустым", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             try
             {
                 if (isEdit == true)

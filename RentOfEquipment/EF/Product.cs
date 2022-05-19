@@ -28,6 +28,7 @@ namespace RentOfEquipment.EF
         public System.DateTime Warranty { get; set; }
         public bool Status { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<decimal> Weat { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

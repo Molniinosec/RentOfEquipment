@@ -51,16 +51,21 @@ namespace RentOfEquipment.Windows
             cmbGender.SelectedIndex = employee.IDGender - 1;
             txtLogin.Text = employee.Login;
             txtPassword.Password= employee.Password;
-
-            using (MemoryStream stream = new MemoryStream(employee.Photo))
+            txtRepeatPassword.Password = employee.Password;
+            if (employee.Photo != null)
             {
-                BitmapImage bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
-                bitmapImage.StreamSource = stream;
-                PhotoEmployee.Source = bitmapImage;
+                using (MemoryStream stream = new MemoryStream(employee.Photo))
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                    bitmapImage.StreamSource = stream;
+                    bitmapImage.EndInit();
+                    PhotoEmployee.Source = bitmapImage;
+                }
             }
+          
 
             tbTittle.Text = "Изменение сотрудника";
             btnAdd.Content = "Изменить";
@@ -115,7 +120,7 @@ namespace RentOfEquipment.Windows
             }
 
             var resLogin = ClassHelper.Appdata.Content.Employee.ToList().
-              Where(i => i.Password == txtPassword.Password).FirstOrDefault();
+              Where(i => i.Login==txtLogin.Text && i.Login!=EditEmployee.Login).FirstOrDefault();
             if (resLogin!=null)
             {
                 MessageBox.Show("Такой логин уже есть, введите другой", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);

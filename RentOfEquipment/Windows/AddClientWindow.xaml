@@ -26,6 +26,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Добавление клиента" 
+                   x:Name="tbtittle"
                        Grid.ColumnSpan="2"
                        HorizontalAlignment="Center"
                        FontSize="20"

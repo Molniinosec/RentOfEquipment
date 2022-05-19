@@ -130,6 +130,17 @@ namespace RentOfEquipment.Windows
                 ClassHelper.Helper.ClientInfo = lvClient.SelectedItem as EF.Client;
                 this.Close();
             }
+            else
+            {
+                if (lvClient.SelectedItem is EF.Client)
+                {
+                    var client = lvClient.SelectedItem as EF.Client;
+
+                    AddClientWindow addEmployeeWindow1 = new AddClientWindow(client);
+                    addEmployeeWindow1.ShowDialog();
+                    Filter();
+                }
+            }
         }
     }
 }

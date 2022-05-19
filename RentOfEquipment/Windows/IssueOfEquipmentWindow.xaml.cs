@@ -46,20 +46,55 @@ namespace RentOfEquipment.Windows
 
         private void btnRent_Click(object sender, RoutedEventArgs e)
         {
-            if(tbClientFIO!=null &&tbIDClient!=null && tbEquipmentTittle!=null && tbIDEquipment != null)
+            if (string.IsNullOrWhiteSpace(dataStart.Text))
             {
-                EF.ClientProduct modelClientProduct = new EF.ClientProduct();
-                modelClientProduct.ClientID =Convert.ToInt32(tbIDClient.Text);
-                modelClientProduct.ProductID =Convert.ToInt32(tbIDEquipment.Text);
-                modelClientProduct.EmployeeID = Convert.ToInt32(globalEmpl.ID);
-                modelClientProduct.RentStartDate = dataStart.DisplayDate;
-                modelClientProduct.RentEndDate = dataEnd.DisplayDate;
-
-                ClassHelper.Appdata.Content.ClientProduct.Add(modelClientProduct);
-                ClassHelper.Appdata.Content.SaveChanges();
-                MessageBox.Show("Данные аренды добавлены", "Успешно");
-                this.Close();
+                MessageBox.Show("Дата начала не может быть пустой", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
+            if (string.IsNullOrWhiteSpace(dataEnd.Text))
+            {
+                MessageBox.Show("Дата конца не может быть пустой", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbIDClient.Text))
+            {
+                MessageBox.Show("Выберите пользователя", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbClientFIO.Text))
+            {
+                MessageBox.Show("Выберите пользователя", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbEquipmentTittle.Text))
+            {
+                MessageBox.Show("Выберите товар", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbIDEquipment.Text))
+            {
+                MessageBox.Show("Выберите товар", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (dataStart.DisplayDate > dataEnd.DisplayDate)
+            {
+                MessageBox.Show("Дата начала не может быть больше даты окончания", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            
+
+            EF.ClientProduct modelClientProduct = new EF.ClientProduct();
+            modelClientProduct.ClientID =Convert.ToInt32(tbIDClient.Text);
+            modelClientProduct.ProductID =Convert.ToInt32(tbIDEquipment.Text);
+            modelClientProduct.EmployeeID = Convert.ToInt32(globalEmpl.ID);
+            modelClientProduct.RentStartDate = dataStart.DisplayDate;
+            modelClientProduct.RentEndDate = dataEnd.DisplayDate;
+
+            ClassHelper.Appdata.Content.ClientProduct.Add(modelClientProduct);
+            ClassHelper.Appdata.Content.SaveChanges();
+            MessageBox.Show("Данные аренды добавлены", "Успешно");
+            this.Close();
+            
         }
     }
 }
